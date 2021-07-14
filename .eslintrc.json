@@ -16,17 +16,24 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "prettier"
+        "prettier",
+        "eslint-plugin-import-helpers"
     ],
     "rules": {
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": 
-        [
-	        "error"
+        "@typescript-eslint/no-use-before-define":[ "error" ],
+        "@typescript-eslint-naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": ["PacalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": true
+            }
+          }
         ],
-        "import/extensions": [
-            "error",
-            "ignorePackages",
+        "import/extensions": [ "error", "ignorePackages", 
             {
               "ts": "never"
             }
