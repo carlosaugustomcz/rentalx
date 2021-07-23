@@ -14,7 +14,7 @@ class CreateCategoryController{
 
     this.createCategoryUseCase.execute({ name, description });
 
-    return response.status(201).json({ message: "sucesso" });
+    return response.status(201).json({ message: "created" });
     
     }
 }
