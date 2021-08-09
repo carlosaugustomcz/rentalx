@@ -1,15 +1,14 @@
 import 'reflect-metadata';
 
-import express, { request } from 'express';
+import express from 'express';
 import swaggerUi from "swagger-ui-express";
-
-import { router } from "./routes"
-import swaggerFile from "./swagger.json";
 
 import "./database";
 
 import "./shared/container";
 
+import { router } from "./routes"
+import swaggerFile from "./swagger.json";/usr/app/src///usr/app/src/modules/cars/repositories/implementations/CategoriesRepository.ts:19:45usr/app/src/modules/cars/repositories/implementations/CategoriesRepository.ts:19:45/usr/app/src/modules/cars/repositories/implementations/CategoriesRepository.ts:19:45odules/cars/repositories/implementations/CategoriesRepository.ts:19:45
 
 const app = express();
 
