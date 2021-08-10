@@ -4,16 +4,15 @@ import { container } from "tsyringe";
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 class CreateCategoryController{
+    
+    async handle(request: Request, response: Response){
+        const { name, description } = request.body;
 
-    handle(request: Request, response: Response){
+        const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
 
-    const { name, description } = request.body;
+        await createCategoryUseCase.execute({ name, description });
 
-    const createCategoryUseCase = container.resolve(CreateCategoryUseCase);
-
-    createCategoryUseCase.execute({ name, description });
-
-    return response.status(201).json({ message: "created" });
+        return response.status(201).json({ message: "created" });
     
     }
 }

@@ -23,12 +23,13 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     async create({ name, description }: ICreateCategoryDTO): Promise<void> {
+
         const category = this.repository.create({
             name,
             description
         });
 
-        await this.repository.save(Category);
+        await this.repository.save(category);
     
     }
 
@@ -41,7 +42,8 @@ class CategoriesRepository implements ICategoriesRepository {
     }
 
     async findByName(name: string): Promise<Category> { 
-        const category = await this.repository.findone({ name });
+
+        const category = await this.repository.findOne({ name });
 
         return category;
     }
