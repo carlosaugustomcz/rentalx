@@ -7,14 +7,11 @@ import { ListSpecificationsController } from "../modules/cars/useCases/listSpeci
 const specificationsRoutes = Router();
 
 const createSpecificationController = new CreateSpecificationController();
+const listSpecificationCcontroller = new ListSpecificationsController();
 
 specificationsRoutes.post("/", createSpecificationController.handle);
 
 
-// specificationsRoutes.get("/", (request, response) => {
-    
-//     listSpecificationsController.handle(request, response)
-
-// })
+ specificationsRoutes.get("/", listSpecificationCcontroller.handle);
 
 export { specificationsRoutes };

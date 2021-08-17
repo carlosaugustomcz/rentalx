@@ -75,6 +75,96 @@
                     }
                 }
             }
+        },
+        "/categories/import": {
+            "post": {
+                "tags": ["Category"],
+                "sumary": "Upload a new Category",
+                "description": "Upload a new Category",
+                "requestBody": {
+                    "content": {
+                        "application/octet-stream": {
+                            "schema": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "created"
+                    },
+                    "500": {
+                        "description": "Category all ready exists"
+                    }
+
+                }
+            }
+        },
+        "/specifications":{
+            "post": {
+                "tags": ["Specification"],
+                "sumary": "Create Specification",
+                "description": "Create a new Specification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Specification name sample",
+                                    "description": "description name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "created"
+                    },
+                    "500": {
+                        "description": "Specification all ready exists"
+                    }                   
+                }
+            },
+            "get": {
+                "tags": ["Specifications"],
+                "sumary": "List all Specifications",
+                "description" : "List all Specifications",
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }    
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                    
         }
 
     }
