@@ -15,7 +15,7 @@ export class CreateSpecifications1629240553961 implements MigrationInterface {
                         {
                             name: "name",
                             type: "varchar",
-                        },
+                        }, 
                         {
                             name: "description",
                             type: "varchar",
