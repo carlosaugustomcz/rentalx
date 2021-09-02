@@ -1,1 +1,1 @@
-# rentalx 
+# rentalx - Locadora de Automoveis.
