@@ -37,45 +37,39 @@ describe("Autenticate User", () => {
 
     });
 
-    it("should not be able to autenticate an nonexists user", () => {
-        expect( async () => {
+    it("should not be able to autenticate an nonexists user", async () => {
+        const user: ICreateUserDTO = {
+            name: "Teste User",
+            driver_lincense: "12345",
+            email: "teste@teste.com",
+            password: "1234"
+        };
 
-            const user: ICreateUserDTO = {
-                name: "Teste User",
-                driver_lincense: "12345",
-                email: "teste@teste.com",
-                password: "1234"
-            };
+        await createUserUseCase.execute(user);
 
-            await createUserUseCase.execute(user);
-
-            await autenticateUserUseCase.execute({
-                email: "emailerrado@teste.com",
+        await expect(autenticateUserUseCase.execute({
+                email: "testeerrado@teste.com",
                 password: user.password
-            });
-
-
-        }).rejects.toBeInstanceOf(AppError);
+            })
+        ).rejects.toBeInstanceOf(AppError);
     });
 
-    it("should not be able to autenticate with incorrect password", () => {
-        expect( async () => {
+    it("should not be able to autenticate with incorrect password", async () => {
+        const user: ICreateUserDTO = {
+            name: "Teste User",
+            driver_lincense: "12345",
+            email: "teste@teste.com",
+            password: "12345"
+        }
 
-            const user: ICreateUserDTO = {
-                name: "Teste User",
-                driver_lincense: "12345",
-                email: "teste@teste.com",
-                password: "1234"
-            }
-    
-            await createUserUseCase.execute(user);
+        await createUserUseCase.execute(user);
 
-            await autenticateUserUseCase.execute({
+        await expect(
+            autenticateUserUseCase.execute({
                 email: user.email,
                 password: "1234"
-            });
-
-        }).rejects.toBeInstanceOf(AppError);
+            })
+        ).rejects.toBeInstanceOf(AppError);
     })
 
 });

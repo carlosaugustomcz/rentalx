@@ -1,4 +1,4 @@
-import { compare } from "bcrypt";
+import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 import { AppError } from "../../../../errors/AppError";
@@ -26,8 +26,8 @@ class AuthenticateUserUseCase {
 
     async execute({ email, password }: IRequest): Promise<IResponse> {
 
-        const user = this.userRepository.findByEmail(email)
-
+        const user = await this.userRepository.findByEmail(email);
+        
         if(!user){
             throw new AppError("email or password incorrect!");
              
