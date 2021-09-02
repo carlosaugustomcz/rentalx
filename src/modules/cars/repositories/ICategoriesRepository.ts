@@ -7,12 +7,12 @@ interface ICreateCategoryDTO{
     description: string;
 }
 
-class ICategoriesRepository {
-    function create( { name, description }: ICreateCategoryDTO ): Promise<void>;
+interface ICategoriesRepository {
+    create( { name, description }: ICreateCategoryDTO ): Promise<void>;
 
-    function findByName(name: string): Promise<Category>;
+    findByName(name: string): Promise<Category>;
     
-    function list(): Promise<Category[]>;
+    list(): Promise<Category[]>;
 } 
 
 export { ICategoriesRepository, ICreateCategoryDTO }

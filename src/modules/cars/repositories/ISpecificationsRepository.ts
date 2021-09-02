@@ -7,7 +7,7 @@ interface ICreateSpecificationDTO{
     description: string;
 }
 
-class ISpecificationsRepository {
+interface ISpecificationsRepository {
 
     create( { name, description }: ICreateSpecificationDTO ): Promise<void>;
 
