@@ -1,1 +1,1 @@
-# rentalx - Aplicativo para Locaço de Automovel.
+# rentalx - Aplicativo para Locação de Automoveis.
