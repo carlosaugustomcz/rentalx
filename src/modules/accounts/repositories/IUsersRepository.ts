@@ -1,4 +1,4 @@
-import { ICreateUserDTO } from "../../accounts/dtos/ICreateUserDTO";
+import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { User } from "../entities/User";
 
 
