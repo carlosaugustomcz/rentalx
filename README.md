@@ -1,9 +1,9 @@
 # API REST em Node.JS
 # rentalx - Locadora de carros.
 
-
-
-
+**RF** - Requesito Funcional.
+**RNF** - Requesito não funcional
+**RN** - Regra de negócio.
 
 
 # Cadastro do Carro.
@@ -12,7 +12,6 @@ Deve ser possível cadastrar um carro.
 
 **RN**
 Não deve ser possível cadastrar um carro com uma placa existente.
-Não deve ser possível alterar a placa de um carro já cadastrado.
 O carro deve ser cadastrado por padrão como disponível para locação.
 O usuário responsável pelo cadastrado deve ser administrador.
 
