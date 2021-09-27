@@ -5,7 +5,7 @@ import { Specification } from "../typeorm/entities/Specification";
 
 class SpecificationsRepository implements ISpecificationsRepository {
 
-      private repository: Repository<Specification>;
+    private repository: Repository<Specification>;
 
     constructor() {
         this.repository = getRepository(Specification);

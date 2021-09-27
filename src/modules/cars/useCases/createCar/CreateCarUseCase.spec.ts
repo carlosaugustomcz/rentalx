@@ -25,7 +25,7 @@ describe("Create Car", () => {
             category_id: "111111", 
             brand: "brand", 
             fine_amount: 100, 
-            lincense_plate: "ABC-1234"
+            license_plate: "ABC-1234"
         });
     
         expect(car).toHaveProperty("id");
@@ -43,7 +43,7 @@ describe("Create Car", () => {
             category_id: "111111", 
             brand: "brand1", 
             fine_amount: 100, 
-            lincense_plate: "ABC-1234"
+            license_plate: "ABC-1234"
         });
 
         await createCarUseCase.execute({
@@ -53,7 +53,7 @@ describe("Create Car", () => {
             category_id: "111111", 
             brand: "brand2", 
             fine_amount: 100, 
-            lincense_plate: "ABC-1234"
+            license_plate: "ABC-1234"
         });
 
         }).rejects.toBeInstanceOf(AppError);
@@ -68,7 +68,7 @@ describe("Create Car", () => {
             category_id: "111111", 
             brand: "brand", 
             fine_amount: 100, 
-            lincense_plate: "ABC-1234"
+            license_plate: "ABC-1234"
         });
     
         expect(car.available).toBe(true);

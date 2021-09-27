@@ -23,7 +23,7 @@ export class CreateCars1632254183576 implements MigrationInterface {
 
                     },
                     {
-                        name: "dayle_rate",
+                        name: "daily_rate",
                         type: "numeric",
 
                     },
@@ -34,7 +34,7 @@ export class CreateCars1632254183576 implements MigrationInterface {
 
                     },
                     {
-                        name: "licence_plate",
+                        name: "license_plate",
                         type: "varchar",
 
                     },

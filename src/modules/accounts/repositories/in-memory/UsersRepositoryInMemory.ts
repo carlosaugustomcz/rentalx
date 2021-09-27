@@ -7,11 +7,11 @@ class UsersRepositoryInMemory implements IUsersRepository {
 
     users : User[] = [];
 
-    async create({ driver_lincense, name, password, email }: ICreateUserDTO): Promise<void> {
+    async create({ driver_license, name, password, email }: ICreateUserDTO): Promise<void> {
         const user = new User();
 
         Object.assign(user, {
-            driver_lincense, 
+            driver_license, 
             name, 
             password, 
             email

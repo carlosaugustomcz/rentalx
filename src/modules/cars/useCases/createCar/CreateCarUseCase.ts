@@ -8,24 +8,24 @@ interface IRequest{
     name: string;
     description: string;
     daily_rate: number;
-    lincense_plate: string;
+    license_plate: string;
     fine_amount: number;
     brand: string;
     category_id: string;
 
 }
 
-//@injectable()
+@injectable()
 class CreateCarUseCase {
 
     constructor(
-        //@inject("CarRepository")
+        @inject("CarsRepository")
         private carRepository: ICarsRepository
     ){}
 
-  async execute({name, description, daily_rate, lincense_plate, fine_amount, brand, category_id}: IRequest): Promise<Car> {
+  async execute({name, description, daily_rate, license_plate, fine_amount, brand, category_id}: IRequest): Promise<Car> {
 
-    const carAlreadyExists = this.carRepository.findByLincesePlate(lincense_plate);
+    const carAlreadyExists = this.carRepository.findByLincesePlate(license_plate);
 
     if(!carAlreadyExists){
     
@@ -40,7 +40,7 @@ class CreateCarUseCase {
         daily_rate,
         description,
         fine_amount,
-        lincense_plate
+        license_plate
 
     })
 

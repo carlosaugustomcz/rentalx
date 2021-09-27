@@ -18,7 +18,7 @@ class User {
     email: string;
 
     @Column()
-    driver_lincense: string;
+    driver_license: string;
 
     @Column()
     isAdmin: boolean;
