@@ -8,6 +8,8 @@ class ListAvailableCarsController {
 
         const { brand, category_id, name} = request.query;
 
+     
+
         const listAvailableCarsUseCase = container.resolve(ListAvailableCarsUseCase);
 
         const cars = listAvailableCarsUseCase.execute({
