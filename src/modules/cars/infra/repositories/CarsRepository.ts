@@ -11,7 +11,6 @@ class CarsRepository implements ICarsRepository {
     private constructor() {
         this.repository = getRepository(Car);
     }
- 
 
     async create({
         brand,
@@ -69,6 +68,10 @@ class CarsRepository implements ICarsRepository {
         return cars;
 
 
+    }
+
+    findById(id: string): Promise<Car> {
+        throw new Error("Method not implemented.");
     }
 
 }

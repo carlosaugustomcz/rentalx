@@ -13,8 +13,7 @@ interface IRequest{
 class CreateCarSpecificationUseCase {
 
     constructor(
-        private carRepository: ICarsRepository,
-        private specificationRepository: ISpecificationsRepository){}
+        private carRepository: ICarsRepository){}
 
     async execute({car_id, specification_id}: IRequest): Promise<void> {
         
