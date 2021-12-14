@@ -18,9 +18,9 @@ describe("create Car Specification", () => {
         expect(async () => {
 
             const car_id = '1234';
-            const specification_id = '1234';
+            const specifications_id = '1234';
     
-            await createCarSpeficicationUseCase.execute({ car_id, specification_id });
+            await createCarSpeficicationUseCase.execute({ car_id, specifications_id });
 
         }).rejects.toBeInstanceOf(AppError);
 
@@ -37,11 +37,11 @@ describe("create Car Specification", () => {
             license_plate: "ABC-1234"
         });
 
-        const specification_id = '1234';
+        const specifications_id = '1234';
 
         await createCarSpeficicationUseCase.execute({
             car_id: car.id,
-            specification_id,
+            specifications_id,
 
         });
     })
